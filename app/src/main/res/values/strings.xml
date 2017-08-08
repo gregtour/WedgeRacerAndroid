@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Wedge Racer</string>
+
+    <string name="static_vertex_shader">
+        attribute vec4 vPosition;
+        uniform mat4 uModelMatrix;
+        uniform mat4 uCameraMatrix;
+        uniform mat4 uProjMatrix;
+        void main() {
+            gl_Position = uProjMatrix * uCameraMatrix * uModelMatrix * vPosition;
+        }
+    </string>
+    <string name="static_frag_shader">
+        precision mediump float;
+        uniform vec4 vColor;
+        void main() {
+            gl_FragColor = vColor;
+        }
+    </string>
+    <string name="static_vertex_shader_index">
+
+    </string>
+    <string name="static_frag_shader_index">
+
+    </string>
+    <string name="static_vertex_shader_color">
+        attribute vec4 vPosition;
+        attribute vec4 vVertColor;
+        uniform mat4 uModelMatrix;
+        uniform mat4 uCameraMatrix;
+        uniform mat4 uProjMatrix;
+        varying vec4 vColor;
+        void main() {
+            gl_Position = uProjMatrix * uCameraMatrix * uModelMatrix * vPosition;
+            vColor = vVertColor;
+        }
+    </string>
+    <string name="static_frag_shader_color">
+        precision mediump float;
+        varying vec4 vColor;
+        void main() {
+            gl_FragColor = vColor;
+        }
+    </string>
+    <string name="static_vertex_shader_index_color">
+
+    </string>
+    <string name="static_frag_shader_index_color">
+
+    </string>
+</resources>
